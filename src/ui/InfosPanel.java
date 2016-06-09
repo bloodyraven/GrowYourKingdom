@@ -21,7 +21,7 @@ public class InfosPanel extends JPanel {
 		this.goldLabel=new Label("Gold : "+g.getGold());
 		this.criminalityLabel=new Label("Criminality : "+g.getCriminality());
 		this.defenseLabel=new Label("Defense : "+g.getDefense());
-		this.setLayout(new BoxLayout(null, BoxLayout.PAGE_AXIS));
+		this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 		this.add(populationLabel);
 		this.add(happinessLabel);
 		this.add(goldLabel);
@@ -35,6 +35,46 @@ public class InfosPanel extends JPanel {
 
 	public void setG(Game g) {
 		this.g = g;
+	}
+
+	public Label getPopulationLabel() {
+		return populationLabel;
+	}
+
+	public void setPopulationLabel(Label populationLabel) {
+		this.populationLabel = populationLabel;
+	}
+
+	public Label getHappinessLabel() {
+		return happinessLabel;
+	}
+
+	public void setHappinessLabel(Label happinessLabel) {
+		this.happinessLabel = happinessLabel;
+	}
+
+	public Label getGoldLabel() {
+		return goldLabel;
+	}
+
+	public void setGoldLabel(Label goldLabel) {
+		this.goldLabel = goldLabel;
+	}
+
+	public Label getCriminalityLabel() {
+		return criminalityLabel;
+	}
+
+	public void setCriminalityLabel(Label criminalityLabel) {
+		this.criminalityLabel = criminalityLabel;
+	}
+
+	public Label getDefenseLabel() {
+		return defenseLabel;
+	}
+
+	public void setDefenseLabel(Label defenseLabel) {
+		this.defenseLabel = defenseLabel;
 	}
 	
 }
