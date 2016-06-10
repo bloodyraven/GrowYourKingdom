@@ -1,5 +1,7 @@
 package ui;
 
+import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.Label;
 
 import javax.swing.BoxLayout;
@@ -13,9 +15,11 @@ public class InfosPanel extends JPanel {
 	
 	private Game g;
 	private Label populationLabel, happinessLabel, goldLabel, criminalityLabel, defenseLabel;
+	private Container parent;
 	
-	public InfosPanel(Game g) {
+	public InfosPanel(Game g, Container parent) {
 		this.setG(g);
+		this.setParent(parent);
 		this.populationLabel=new Label("Population : "+g.getPopulation());
 		this.happinessLabel=new Label("Happiness : "+g.getHappiness());
 		this.goldLabel=new Label("Gold : "+g.getGold());
@@ -27,6 +31,7 @@ public class InfosPanel extends JPanel {
 		this.add(goldLabel);
 		this.add(criminalityLabel);
 		this.add(defenseLabel);
+		this.setPreferredSize(new Dimension(100, 150));
 	}
 
 	public Game getG() {
@@ -75,6 +80,14 @@ public class InfosPanel extends JPanel {
 
 	public void setDefenseLabel(Label defenseLabel) {
 		this.defenseLabel = defenseLabel;
+	}
+
+	public Container getParent() {
+		return parent;
+	}
+
+	public void setParent(Container parent) {
+		this.parent = parent;
 	}
 	
 }
