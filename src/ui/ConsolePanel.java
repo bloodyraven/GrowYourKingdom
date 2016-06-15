@@ -33,7 +33,7 @@ public class ConsolePanel extends JPanel {
 			@Override
 			public void keyReleased(KeyEvent arg0) {
 				if(arg0.getKeyCode() == KeyEvent.VK_ENTER) {
-					ta.append(tf.getText()+"\n");
+					ta.append("> "+tf.getText()+"\n");
 					tf.setText("");
 				}
 			}
