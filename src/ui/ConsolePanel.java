@@ -1,6 +1,5 @@
 package ui;
 
-import java.awt.Container;
 import java.awt.TextArea;
 import java.awt.TextField;
 import java.awt.event.KeyEvent;
@@ -16,10 +15,8 @@ public class ConsolePanel extends JPanel {
 	private String consoleContent="";
 	private TextArea ta;
 	private TextField tf;
-	private Container parent;
 	
-	public ConsolePanel(Container parent) {
-		this.setParent(parent);
+	public ConsolePanel() {
 		this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 		final TextArea ta = new TextArea();
 		ta.setFocusable(false);
@@ -67,11 +64,4 @@ public class ConsolePanel extends JPanel {
 		this.tf = tf;
 	}
 
-	public Container getParent() {
-		return parent;
-	}
-
-	public void setParent(Container parent) {
-		this.parent = parent;
-	}
 }

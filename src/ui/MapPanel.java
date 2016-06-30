@@ -12,7 +12,4 @@ public class MapPanel extends JPanel {
 		this.setPreferredSize(new Dimension(700, 500));
 	}
 
-	public MapPanel() {
-		this.setPreferredSize(new Dimension(800, 500));
-	}
 }
