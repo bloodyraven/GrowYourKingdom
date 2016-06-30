@@ -1,5 +1,6 @@
 package ui;
 
+import java.awt.Container;
 import java.awt.TextArea;
 import java.awt.TextField;
 import java.awt.event.KeyEvent;
@@ -15,13 +16,14 @@ public class ConsolePanel extends JPanel {
 	private String consoleContent="";
 	private TextArea ta;
 	private TextField tf;
+	private Container parent;
 	
-	
-	public ConsolePanel() {
+	public ConsolePanel(Container parent) {
+		this.setParent(parent);
 		this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
-		TextArea ta = new TextArea();
+		final TextArea ta = new TextArea();
 		ta.setFocusable(false);
-		TextField tf = new TextField();
+		final TextField tf = new TextField();
 		this.add(ta);
 		this.add(tf);
 		tf.addKeyListener(new KeyListener() {
@@ -31,7 +33,7 @@ public class ConsolePanel extends JPanel {
 			@Override
 			public void keyReleased(KeyEvent arg0) {
 				if(arg0.getKeyCode() == KeyEvent.VK_ENTER) {
-					ta.append(tf.getText()+"\n");
+					ta.append("> "+tf.getText()+"\n");
 					tf.setText("");
 				}
 			}
@@ -63,5 +65,13 @@ public class ConsolePanel extends JPanel {
 
 	public void setTf(TextField tf) {
 		this.tf = tf;
+	}
+
+	public Container getParent() {
+		return parent;
+	}
+
+	public void setParent(Container parent) {
+		this.parent = parent;
 	}
 }
