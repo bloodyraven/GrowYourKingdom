@@ -1,5 +1,6 @@
 package ui;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Label;
 
@@ -16,6 +17,7 @@ public class InfosPanel extends JPanel {
 	private Label populationLabel, happinessLabel, goldLabel, criminalityLabel, defenseLabel;
 	
 	public InfosPanel(Game g) {
+		this.setBackground(Color.BLUE);
 		this.setG(g);
 		this.populationLabel=new Label("Population : "+g.getPopulation());
 		this.happinessLabel=new Label("Happiness : "+g.getHappiness());

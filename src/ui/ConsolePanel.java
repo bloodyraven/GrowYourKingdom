@@ -1,5 +1,6 @@
 package ui;
 
+import java.awt.Color;
 import java.awt.TextArea;
 import java.awt.TextField;
 import java.awt.event.KeyEvent;
@@ -17,6 +18,7 @@ public class ConsolePanel extends JPanel {
 	private TextField tf;
 	
 	public ConsolePanel() {
+		this.setBackground(Color.CYAN);
 		this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 		final TextArea ta = new TextArea();
 		ta.setFocusable(false);

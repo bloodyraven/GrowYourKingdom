@@ -1,5 +1,6 @@
 package ui;
 
+import java.awt.Color;
 import java.awt.FlowLayout;
 
 import javax.swing.JPanel;
@@ -12,6 +13,7 @@ public class ControlPanel extends JPanel {
 	private ConsolePanel cp;
 
 	public ControlPanel(InfosPanel ip, ConsolePanel cp) {
+		this.setBackground(Color.red);
 		this.setIp(ip);
 		this.setCp(cp);
 		this.setLayout(new FlowLayout());
