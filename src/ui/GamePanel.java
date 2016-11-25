@@ -3,7 +3,9 @@ package ui;
 import java.awt.BorderLayout;
 
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
+import test.Marche;
 import bean.Game;
 
 public class GamePanel extends JPanel {
@@ -14,16 +16,16 @@ public class GamePanel extends JPanel {
 	private ConsolePanel cslp;
 	private ControlPanel ctrlp;
 	private InfosPanel infop;
-	private MapPanel mapp;
+	private Marche mapp;
 	
 	public GamePanel(Game g) {
 		this.setG(g);
 		infop = new InfosPanel(g);
 		cslp = new ConsolePanel();
 		ctrlp = new ControlPanel(infop, cslp);
-		mapp = new MapPanel();
+		mapp = new Marche();
 		this.setLayout(new BorderLayout());
-		this.add(mapp, BorderLayout.CENTER);
+		this.add(new JScrollPane(mapp), BorderLayout.CENTER);
 		this.add(ctrlp, BorderLayout.SOUTH);
 	}
 
@@ -59,11 +61,11 @@ public class GamePanel extends JPanel {
 		this.infop = infop;
 	}
 
-	public MapPanel getMapp() {
+	public Marche getMapp() {
 		return mapp;
 	}
 
-	public void setMapp(MapPanel mapp) {
+	public void setMapp(Marche mapp) {
 		this.mapp = mapp;
 	}
 	
