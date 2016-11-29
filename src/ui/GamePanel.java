@@ -5,7 +5,6 @@ import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-import test.Marche;
 import bean.Game;
 
 public class GamePanel extends JPanel {
@@ -16,14 +15,14 @@ public class GamePanel extends JPanel {
 	private ConsolePanel cslp;
 	private ControlPanel ctrlp;
 	private InfosPanel infop;
-	private Marche mapp;
+	private MapPanel mapp;
 	
 	public GamePanel(Game g) {
 		this.setG(g);
 		infop = new InfosPanel(g);
 		cslp = new ConsolePanel();
 		ctrlp = new ControlPanel(infop, cslp);
-		mapp = new Marche();
+		mapp = new MapPanel();
 		this.setLayout(new BorderLayout());
 		this.add(new JScrollPane(mapp), BorderLayout.CENTER);
 		this.add(ctrlp, BorderLayout.SOUTH);
@@ -61,11 +60,11 @@ public class GamePanel extends JPanel {
 		this.infop = infop;
 	}
 
-	public Marche getMapp() {
+	public MapPanel getMapp() {
 		return mapp;
 	}
 
-	public void setMapp(Marche mapp) {
+	public void setMapp(MapPanel mapp) {
 		this.mapp = mapp;
 	}
 	
