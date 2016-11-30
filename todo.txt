@@ -1,2 +1,0 @@
-> Rendre la fenetre adaptée à la hauteur/largeur de l'écran.
-> 

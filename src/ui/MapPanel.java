@@ -13,6 +13,7 @@ import java.awt.event.MouseWheelListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
@@ -67,7 +68,8 @@ public class MapPanel extends JPanel {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				origin = new Point(e.getPoint());
-				System.out.println("Coord "+e.getX()+","+e.getY());
+				System.out.println(actualZoomCoef+" Coord "+e.getX()+","+e.getY());
+				System.out.println(Arrays.toString(getRealCoord(e.getX(), e.getY())));
 			}
 
 			@Override
@@ -96,6 +98,15 @@ public class MapPanel extends JPanel {
 		this.addMouseListener(ma);
         this.addMouseMotionListener(ma);
 		
+	}
+	
+	public int[] getRealCoord(int x, int y) {
+		int[] res = {x,y};
+		for (int i = 2; i < actualZoomCoef; i++) {
+			res[0]=(int)(res[0]*0.92)+1; // +1 = marge d'erreur
+			res[1]=(int)(res[1]*0.92)+2; // +2 = marge d'erreur
+		}
+		return res;
 	}
 
 	private void updatePreferredSize(int n, Point p) {
